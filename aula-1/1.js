@@ -6,6 +6,10 @@ class cliente {
 class cuentaCorriente{
     numeroCuenta;
     saldoCuenta;
+
+    depositoEnCuenta(valor){
+        this.saldo = this.saldo + valor;
+    }
 }
 
 const cliente1 = new cliente();
@@ -18,6 +22,8 @@ const cuentaCorriente1 = new cuentaCorriente();
 cuentaCorriente1.numeroCuenta = '12345';
 cuentaCorriente1.saldoCuenta = 5000;
 
+
+
 const cliente2 = new cliente();
 
 cliente2.nombreCliente = 'Rober';
@@ -26,9 +32,9 @@ cliente2.dniCliente = '42679209';
 const cuentaCorriente2 = new cuentaCorriente();
 
 cuentaCorriente2.numeroCuenta = '67890';
-cuentaCorriente2.saldoCuenta = 50000;
+cuentaCorriente2.saldoCuenta = 75000;
 
-console.log(cliente1);
-console.log(cuentaCorriente1);
-console.log(cliente2);
-console.log(cuentaCorriente2);
+
+console.log(cuentaCorriente2.saldo);
+cuentaCorriente2.depositoEnCuenta(100);
+console.log(cuentaCorriente2.saldo);
