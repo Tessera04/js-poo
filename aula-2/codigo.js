@@ -6,13 +6,10 @@ import {cuentaCorriente} from './CuentaCorriente.js';
 /*------------------------------------------------*/
 //Datos clientes
 
-const cliente1 = new cliente();
-cliente1.nombreCliente = 'Leonardo';
-cliente1.dniCliente = '42152134';
-
-const cliente2 = new cliente();
-cliente2.nombreCliente = 'Maria';
-cliente2.dniCliente = '42152132';
+const cliente1 = new cliente('Leonardo', '42152134');
+const cliente2 = new cliente('Maria', '42152132');
+console.log(cliente1);
+console.log(cliente2);
 
 /*------------------------------------------------*/
 //Datos cuentas
