@@ -1,11 +1,4 @@
-/*Definicion de clases*/
-
-class cliente {
-    nombreCliente;
-    dniCliente;
-};
-
-class cuentaCorriente{
+export class cuentaCorriente{
     numero;
     #saldo; //Si ponemos un # la variable pasa a ser privada solo para la clase. Si intentamos llamarla afuera de la class nos va a dar error. 
     agencia;
@@ -32,17 +25,8 @@ class cuentaCorriente{
         return this.#saldo;
     };
 
+    transferirParaCuenta(valor, cuentaDestino){
+        this.retirarDeCuenta(valor);
+        cuentaDestino.depositoEnCuenta(valor, cuentaDestino);
+    };
 };
-
-/*-----------------------------------------*/
-
-cuentaDeLeonardo = new cuentaCorriente();
-
-let saldo = cuentaDeLeonardo.verSaldo();
-console.log(`El saldo actual es de ${saldo}`);
-
-saldo = cuentaDeLeonardo.depositoEnCuenta(1000);
-console.log(`El saldo actual es de ${saldo}`);
-
-saldo = cuentaDeLeonardo.retirarDeCuenta(500);
-console.log(`El saldo actual es de ${saldo}`);

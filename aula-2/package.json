@@ -1,0 +1,13 @@
+{
+    "name": "cuentasbancopopular",
+    "version": "1.0.0",
+    "description": "Gestion de cuentas corrientes del Banco Popular",
+    "main": "codigo.js",
+
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Mati",
+    "license": "ISC",
+    "type": "module"
+}
