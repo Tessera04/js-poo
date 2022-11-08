@@ -4,16 +4,18 @@ import {cliente} from './Cliente.js';
 import {cuentaCorriente} from './CuentaCorriente.js';
 
 /*------------------------------------------------*/
+//Datos clientes
 
-const cliente = new cliente();
-cliente.nombreCliente = 'Leonardo';
-cliente.dniCliente = '42152134';
+const cliente1 = new cliente();
+cliente1.nombreCliente = 'Leonardo';
+cliente1.dniCliente = '42152134';
 
 const cliente2 = new cliente();
 cliente2.nombreCliente = 'Maria';
 cliente2.dniCliente = '42152132';
 
 /*------------------------------------------------*/
+//Datos cuentas
 
 const cuentaDeLeonardo = new cuentaCorriente();
 cuentaDeLeonardo.numero = '1';
@@ -26,6 +28,7 @@ cuentaDeMaria.agencia = '002';
 cuentaDeMaria.cliente = cliente2;
 
 /*------------------------------------------------*/
+//Ver saldo Leonardo
 
 let saldo = cuentaDeLeonardo.verSaldo();
 console.log(`El saldo actual es de ${saldo}`);
@@ -33,15 +36,13 @@ console.log(`El saldo actual es de ${saldo}`);
 saldo = cuentaDeLeonardo.depositoEnCuenta(1000);
 console.log(`El saldo actual (cuenta Leonardo) ${saldo}`);
 
-saldo = cuentaDeLeonardo.retirarDeCuenta(500);
-console.log(`El saldo actual es de ${saldo}`);
-
-saldo = cuentaDeLeonardo.depositoEnCuenta(1500);
-console.log(`El saldo actual es de ${saldo}`);
-
 /*------------------------------------------------*/
+//Transferencia
 
-saldo = cuentaDeMaria.depositoEnCuenta(1000);
-console.log(`El saldo actual (cuenta Maria) ${saldo}`);
+cuentaDeLeonardo.transferirParaCuenta(100,cuentaDeMaria);
 
-cuentaDeLeonardo.transferirParaCuenta(100, cuentaDeMaria);
+const saldoMaria = cuentaDeMaria.verSaldo();
+console.log(`El saldo actual (Cuenta maria) ${saldoMaria}`);
+
+const saldoLeonardo = cuentaDeLeonardo.verSaldo();
+console.log(`El saldo actual (cuenta Leonardo) ${saldoLeonardo}`);
